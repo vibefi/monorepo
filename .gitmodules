@@ -10,3 +10,6 @@
 [submodule "contracts"]
 	path = contracts
 	url = git@github.com:vibefi/contracts.git
+[submodule "cli"]
+	path = cli
+	url = git@github.com:vibefi/cli.git
