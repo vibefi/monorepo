@@ -1,0 +1,12 @@
+[submodule "client"]
+	path = client
+	url = git@github.com:vibefi/client.git
+[submodule "dapp-examples"]
+	path = dapp-examples
+	url = git@github.com:vibefi/dapp-examples.git
+[submodule "studio"]
+	path = studio
+	url = git@github.com:vibefi/studio.git
+[submodule "contracts"]
+	path = contracts
+	url = git@github.com:vibefi/contracts.git
