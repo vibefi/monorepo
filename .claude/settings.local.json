@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun --version:*)",
+      "Bash(forge:*)",
+      "Bash(anvil:*)",
+      "Bash(docker:*)",
+      "Bash(ipfs --version:*)",
+      "Bash(git add:*)",
+      "Bash(git submodule:*)",
+      "Bash(git pull origin feat/create-dapp)",
+      "Bash(bun run:*)"
+    ]
+  }
+}
