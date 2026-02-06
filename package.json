@@ -1,0 +1,5 @@
+{
+  "name": "vibefi-monorepo",
+  "private": true,
+  "workspaces": ["packages/*", "cli", "e2e"]
+}

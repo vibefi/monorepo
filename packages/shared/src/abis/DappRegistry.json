@@ -1,0 +1,118 @@
+[
+  {
+    "type": "function",
+    "name": "publishDapp",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {"name": "rootCid", "type": "bytes"},
+      {"name": "name", "type": "string"},
+      {"name": "version", "type": "string"},
+      {"name": "description", "type": "string"}
+    ],
+    "outputs": [
+      {"name": "dappId", "type": "uint256"},
+      {"name": "versionId", "type": "uint256"}
+    ]
+  },
+  {
+    "type": "function",
+    "name": "pauseDappVersion",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {"name": "dappId", "type": "uint256"},
+      {"name": "versionId", "type": "uint256"},
+      {"name": "reason", "type": "string"}
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "unpauseDappVersion",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {"name": "dappId", "type": "uint256"},
+      {"name": "versionId", "type": "uint256"},
+      {"name": "reason", "type": "string"}
+    ],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "deprecateDappVersion",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      {"name": "dappId", "type": "uint256"},
+      {"name": "versionId", "type": "uint256"},
+      {"name": "reason", "type": "string"}
+    ],
+    "outputs": []
+  },
+  {
+    "type": "event",
+    "name": "DappPublished",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "versionId", "type": "uint256", "indexed": true},
+      {"name": "rootCid", "type": "bytes", "indexed": false},
+      {"name": "proposer", "type": "address", "indexed": false}
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DappUpgraded",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "fromVersionId", "type": "uint256", "indexed": true},
+      {"name": "toVersionId", "type": "uint256", "indexed": true},
+      {"name": "rootCid", "type": "bytes", "indexed": false},
+      {"name": "proposer", "type": "address", "indexed": false}
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DappMetadata",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "versionId", "type": "uint256", "indexed": true},
+      {"name": "name", "type": "string", "indexed": false},
+      {"name": "version", "type": "string", "indexed": false},
+      {"name": "description", "type": "string", "indexed": false}
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DappPaused",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "versionId", "type": "uint256", "indexed": true},
+      {"name": "pausedBy", "type": "address", "indexed": false},
+      {"name": "reason", "type": "string", "indexed": false}
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DappUnpaused",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "versionId", "type": "uint256", "indexed": true},
+      {"name": "unpausedBy", "type": "address", "indexed": false},
+      {"name": "reason", "type": "string", "indexed": false}
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "DappDeprecated",
+    "inputs": [
+      {"name": "dappId", "type": "uint256", "indexed": true},
+      {"name": "versionId", "type": "uint256", "indexed": true},
+      {"name": "deprecatedBy", "type": "address", "indexed": false},
+      {"name": "reason", "type": "string", "indexed": false}
+    ],
+    "anonymous": false
+  }
+]

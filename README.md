@@ -1,1 +1,24 @@
 # vibefi monorepo
+
+Decentralized governance and hosting for DeFi frontends. The protocol lets anyone propose, vote on, and publish dapp frontends via on-chain governance and IPFS, with builds verified locally by each user.
+
+## Submodules
+
+| Directory | Description |
+|-----------|-------------|
+| `cli/` | Bun/TypeScript CLI for proposing, voting, packaging, and managing dapps |
+| `contracts/` | Foundry/Solidity DAO, token, registry, and deployment scripts |
+| `client/` | Wry (Rust) desktop app that fetches, builds, and runs approved dapps |
+| `e2e/` | End-to-end tests covering the full governance + IPFS flow |
+
+See [SETUP.md](SETUP.md) for prerequisites, repo layout, and how to run everything.
+
+## Quick start
+
+```bash
+git clone --recursive https://github.com/vibefi/monorepo.git
+cd monorepo
+bun install
+```
+
+Then follow the instructions in [SETUP.md](SETUP.md).

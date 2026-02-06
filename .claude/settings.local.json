@@ -9,7 +9,19 @@
       "Bash(git add:*)",
       "Bash(git submodule:*)",
       "Bash(git pull origin feat/create-dapp)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "Bash(git pull:*)",
+      "Bash(RPC=http://127.0.0.1:8546)",
+      "Bash(TIMELOCK=0x64a77B8e8DbBC83eF90d39Fe0f42F7367AE2058b)",
+      "Bash(GOVERNOR=0x3ba9D80ADA22010e02c362999cEd1adcca394F36)",
+      "Bash(PROPOSAL_ID=63285322038544568262463229728967912166509172577153310897378425715093071691372)",
+      "Bash(cast call:*)",
+      "Bash(cast block:*)",
+      "Bash(git -C /Users/joshua/code/vibefi/monorepo submodule status)",
+      "Bash(wc:*)",
+      "Bash(FOUNDRY_PROFILE=ci forge build:*)",
+      "Bash(bun install:*)",
+      "Bash(cargo check:*)"
     ]
   }
 }

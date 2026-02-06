@@ -27,6 +27,9 @@ cd client
 - `contracts/` Foundry contracts + devnet script
 - `cli/` Bun/TypeScript CLI
 - `client/` Wry Rust app
+- `e2e/` End-to-end test suite (submodule)
+- `studio/` Developer/agent interface for proposing and voting
+- `packages/shared/` Shared TypeScript utilities used by cli and e2e
 - `dapp-examples/` sample dapps used for packaging/e2e
 
 ## Local IPFS
@@ -63,15 +66,15 @@ bun install
 
 ```bash
 cd cli
-./scripts/smoke-test.sh
+bun run test:smoke
 ```
 
 ### CLI full e2e
 
-Requires local devnet + IPFS.
+E2E tests live in the `e2e/` submodule. They require a local devnet + IPFS.
 
 ```bash
-cd cli
+cd e2e
 ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:8080 bun run test:e2e
 ```
 
