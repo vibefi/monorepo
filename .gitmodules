@@ -13,3 +13,6 @@
 [submodule "cli"]
 	path = cli
 	url = git@github.com:vibefi/cli.git
+[submodule "e2e"]
+	path = e2e
+	url = git@github.com:vibefi/e2e.git
