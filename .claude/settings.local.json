@@ -21,7 +21,15 @@
       "Bash(wc:*)",
       "Bash(FOUNDRY_PROFILE=ci forge build:*)",
       "Bash(bun install:*)",
-      "Bash(cargo check:*)"
+      "Bash(cargo check:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.rs)",
+      "WebFetch(domain:crates.io)",
+      "WebFetch(domain:lib.rs)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(cast balance:*)",
+      "WebFetch(domain:reth.rs)"
     ]
   }
 }

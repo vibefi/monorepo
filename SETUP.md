@@ -79,7 +79,7 @@ ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:808
 ```
 
 The e2e flow:
-- packages `dapp-examples/uniswap-v2-example`
+- packages `dapp-examples/uniswap-v2`
 - publishes to IPFS
 - submits governance proposal
 - votes/queues/executes
