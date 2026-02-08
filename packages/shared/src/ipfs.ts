@@ -95,6 +95,8 @@ export async function downloadDappBundle(
   manifest: Manifest
 ) {
   const gateway = normalizeGateway(ipfsGateway);
+  // Avoid stale files from previous fetches affecting local verification.
+  fs.rmSync(outDir, { recursive: true, force: true });
   ensureDir(outDir);
   fs.writeFileSync(path.join(outDir, "manifest.json"), JSON.stringify(manifest, null, 2));
 
