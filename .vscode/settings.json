@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "contracts/lib": true
+  },
+  "search.exclude": {
+    "contracts/lib": true
+  }
+}

@@ -1,5 +1,8 @@
 {
   "name": "vibefi-monorepo",
   "private": true,
-  "workspaces": ["packages/*", "cli", "e2e"]
+  "workspaces": ["packages/*", "cli", "e2e"],
+  "scripts": {
+    "refresh-abis": "cd cli && bun run refresh-abis"
+  }
 }
