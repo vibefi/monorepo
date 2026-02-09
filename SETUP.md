@@ -75,11 +75,11 @@ E2E tests live in the `e2e/` submodule. They require a local devnet + IPFS.
 
 ```bash
 cd e2e
-ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:8080 bun run test:e2e
+ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:8080 bun run e2e
 ```
 
 The e2e flow:
-- packages `dapp-examples/uniswap-v2-example`
+- packages `dapp-examples/uniswap-v2`
 - publishes to IPFS
 - submits governance proposal
 - votes/queues/executes
@@ -99,6 +99,14 @@ cargo build
 ```bash
 cd client
 cargo run
+```
+
+### Run against devnet
+
+After you've run the e2e flow:
+```bash
+cd client
+cargo run -- --config ../contracts/.devnet/devnet.json
 ```
 
 ### Run with a bundled dapp
