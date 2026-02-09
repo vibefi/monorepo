@@ -29,7 +29,17 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(cast balance:*)",
-      "WebFetch(domain:reth.rs)"
+      "WebFetch(domain:reth.rs)",
+      "Bash(chmod:*)",
+      "Bash(SKIP_UI_BUILD=1 cargo check:*)",
+      "Bash(python3:*)",
+      "Bash(bash:*)",
+      "Bash(bun --cwd walletconnect-helper install:*)",
+      "Bash(bun:*)",
+      "Bash(cargo install:*)",
+      "Bash(SKIP_UI_BUILD=1 cargo packager:*)",
+      "Bash(cargo build:*)",
+      "Bash(open:*)"
     ]
   }
 }
