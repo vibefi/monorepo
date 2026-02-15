@@ -10,7 +10,9 @@ Decentralized governance and hosting for DeFi frontends. The protocol lets anyon
 | `client/` | Wry (Rust) desktop app that fetches, builds, and runs approved dapps |
 | `contracts/` | Foundry/Solidity DAO, token, registry, and deployment scripts |
 | `dapp-examples/` | Example dapps used for local testing, packaging, and integration validation |
+| `docs/` | Docusaurus documentation site |
 | `e2e/` | End-to-end tests covering the full governance + IPFS flow |
+| `lander/` | Landing page site |
 | `studio/` | Browser studio app for composing, previewing, and publishing dapp content |
 
 See [SETUP.md](SETUP.md) for prerequisites, repo layout, and how to run everything.
