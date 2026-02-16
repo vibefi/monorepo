@@ -44,6 +44,17 @@ export {
   normalizeGateway
 } from "./ipfs";
 
+export type {
+  IpfsReadKind,
+  ManifestIpfsAllowEntry,
+  ManifestCapabilities
+} from "./manifest";
+
+export {
+  IPFS_READ_KINDS,
+  validateManifestCapabilities
+} from "./manifest";
+
 export {
   DEFAULT_IPFS_API,
   DEFAULT_IPFS_GATEWAY,
