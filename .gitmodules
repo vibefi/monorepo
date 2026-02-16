@@ -16,3 +16,10 @@
 [submodule "e2e"]
 	path = e2e
 	url = git@github.com:vibefi/e2e.git
+[submodule "docs"]
+	path = docs
+	url = git@github.com:vibefi/docs.git
+	branch = master
+[submodule "lander"]
+	path = lander
+	url = git@github.com:vibefi/lander.git
