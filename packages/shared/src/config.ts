@@ -27,6 +27,7 @@ export type VibefiConfig = {
 export type DevnetJson = {
   chainId: number;
   deployBlock?: number;
+  studioDappId?: number;
   vfiToken: string;
   vfiGovernor: string;
   vfiTimelock: string;
