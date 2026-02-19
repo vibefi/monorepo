@@ -79,7 +79,8 @@ ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:808
 ```
 
 The e2e flow:
-- packages `dapp-examples/uniswap-v2`
+- packages `studio`, `dapp-examples/uniswap-v2`, `dapp-examples/aave-v3`,
+  `dapp-examples/safe-admin`, and `dapp-examples/zfi/dapp` (static-html layout)
 - publishes to IPFS
 - submits governance proposal
 - votes/queues/executes
@@ -126,7 +127,8 @@ cargo run -- --bundle ../cli/.vibefi/cache/<rootCid>
 
 The client will:
 - validate `manifest.json` in the bundle
-- run `bun install` and `bun x vite build` inside the bundle
+- for `constrained` bundles, run `bun install` and `bun x vite build`
+- for `static-html` bundles, skip Bun/Vite and copy the validated files directly
 - serve the compiled output in the WebView
 
 ## Notes / Troubleshooting
@@ -139,4 +141,3 @@ The client will:
 curl -L https://foundry.paradigm.xyz | bash
 foundryup
 ```
-
