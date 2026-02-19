@@ -64,6 +64,7 @@ export function loadDevnetJson(devnetPath?: string): DevnetJson | undefined {
 
 export function resolveContracts(network: NetworkConfig, devnet?: DevnetJson): ContractsConfig {
   if (devnet) {
+    console.log("Using contracts from devnet config");
     return {
       vfiToken: devnet.vfiToken,
       vfiGovernor: devnet.vfiGovernor,
@@ -73,6 +74,8 @@ export function resolveContracts(network: NetworkConfig, devnet?: DevnetJson): C
       proposalRequirements: devnet.proposalRequirements
     };
   }
+
+  console.log("Using contracts from network config");
   return network.contracts ?? {};
 }
 
