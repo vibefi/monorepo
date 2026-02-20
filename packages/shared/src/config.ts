@@ -32,6 +32,7 @@ export type DevnetJson = {
   vfiGovernor: string;
   vfiTimelock: string;
   dappRegistry: string;
+  testNetwork?: boolean;
   constraintsRegistry: string;
   proposalRequirements: string;
   developer: string;
