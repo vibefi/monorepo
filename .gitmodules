@@ -23,3 +23,6 @@
 [submodule "lander"]
 	path = lander
 	url = git@github.com:vibefi/lander.git
+[submodule "gov-agent"]
+	path = gov-agent
+	url = git@github.com:vibefi/governance-agent.git
