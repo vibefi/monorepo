@@ -34,7 +34,7 @@ jobs:
 
       - uses: awalsh128/cache-apt-pkgs-action@v1
         with:
-          packages: libgtk-3-dev libwebkit2gtk-4.1-dev libayatana-appindicator3-dev xvfb xauth
+          packages: libgtk-3-dev libwebkit2gtk-4.1-dev libayatana-appindicator3-dev xvfb xauth ripgrep
           version: 1.0
 
       - name: Setup Bun
@@ -68,7 +68,7 @@ jobs:
         working-directory: e2e
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output
+            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output --verbose
           else
             echo "OPENAI_API_KEY not set; running baseline e2e"
             bun run e2e
