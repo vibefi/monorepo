@@ -12,6 +12,7 @@ Decentralized governance and hosting for DeFi frontends. The protocol lets anyon
 | `dapp-examples/` | Example dapps used for local testing, packaging, and integration validation |
 | `docs/` | Docusaurus documentation site |
 | `e2e/` | End-to-end tests covering the full governance + IPFS flow |
+| `gov-agent/` | Rust governance voting agent for VibeFi DAO |
 | `lander/` | Landing page site |
 | `studio/` | Browser studio app for composing, previewing, and publishing dapp content |
 
@@ -26,3 +27,10 @@ bun install
 ```
 
 Then follow the instructions in [SETUP.md](SETUP.md).
+
+## CI
+
+GitHub Actions runs monorepo e2e on pushes/PRs to `master` via `.github/workflows/e2e.yml`.
+
+- If `OPENAI_API_KEY` is set in repo secrets, CI runs `bun run e2e -- --gov-agent`.
+- Otherwise CI runs baseline `bun run e2e`.
