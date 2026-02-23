@@ -23,6 +23,7 @@ jobs:
     env:
       MONOREPO_DIR: ${{ github.workspace }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      VIBEFI_WC_PROJECT_ID: ${{ secrets.VIBEFI_WC_PROJECT_ID }}
 
     steps:
       - name: Checkout repository and submodules
@@ -31,10 +32,20 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
+      - name: Cache apt archives
+        uses: actions/cache@v4
+        with:
+          path: |
+            /var/cache/apt/archives
+            /var/lib/apt/lists
+          key: ${{ runner.os }}-apt-${{ hashFiles('.github/apt-packages.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-apt-
+
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libayatana-appindicator3-dev
+          sudo xargs -a .github/apt-packages.txt apt-get install -y --no-install-recommends
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -56,7 +67,7 @@ jobs:
         working-directory: e2e
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            bun run e2e -- --gov-agent --client
+            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output
           else
             echo "OPENAI_API_KEY not set; running baseline e2e"
             bun run e2e
