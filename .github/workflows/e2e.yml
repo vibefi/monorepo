@@ -55,6 +55,13 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Cache Rust build artifacts
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            client -> target
+            gov-agent -> target
+
       - name: Setup Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
@@ -62,6 +69,10 @@ jobs:
 
       - name: Install dependencies
         run: bun install --frozen-lockfile
+
+      - name: Install client WalletConnect helper dependencies
+        if: env.OPENAI_API_KEY != ''
+        run: bun install --cwd client/walletconnect-helper --frozen-lockfile
 
       - name: Run E2E tests
         working-directory: e2e
