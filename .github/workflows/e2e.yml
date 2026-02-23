@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   e2e:
-    name: bun e2e (--gov-agent)
+    name: bun e2e
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
@@ -51,9 +51,9 @@ jobs:
         working-directory: e2e
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            bun run e2e -- --gov-agent
+            bun run e2e -- --gov-agent --client
           else
-            echo "OPENAI_API_KEY not set; running e2e without --gov-agent"
+            echo "OPENAI_API_KEY not set; running baseline e2e"
             bun run e2e
           fi
 
