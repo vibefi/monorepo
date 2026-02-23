@@ -37,11 +37,6 @@ jobs:
           packages: libgtk-3-dev libwebkit2gtk-4.1-dev libayatana-appindicator3-dev xvfb xauth ripgrep
           version: 1.0
 
-      - name: Cache Docker images.
-        uses: ScribeMD/docker-cache@0.5.0
-        with:
-          key: docker-${{ runner.os }}-${{ hashFiles('e2e/docker-compose.ipfs.yml') }}
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -75,7 +70,7 @@ jobs:
           NO_AT_BRIDGE: "1" # disable AT Bridge to avoid warnings in CI logs
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output --verbose
+            xvfb-run -a bun run e2e -- --gov-agent --client
           else
             echo "OPENAI_API_KEY not set; running baseline e2e"
             bun run e2e
