@@ -32,5 +32,5 @@ Then follow the instructions in [SETUP.md](SETUP.md).
 
 GitHub Actions runs monorepo e2e on pushes/PRs to `master` via `.github/workflows/e2e.yml`.
 
-- If `OPENAI_API_KEY` is set in repo secrets, CI runs `bun run e2e -- --gov-agent`.
-- Otherwise CI runs baseline `bun run e2e`.
+- If `OPENAI_API_KEY` is set in repo secrets, CI runs `bun run e2e --gov-agent`.
+- Otherwise CI runs baseline `bun run e2e --client`.

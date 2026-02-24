@@ -69,13 +69,12 @@ jobs:
         env:
           NO_AT_BRIDGE: "1" # disable AT Bridge to avoid warnings in CI logs
           LIBGL_ALWAYS_SOFTWARE: "1" # force software rendering to avoid GPU-related issues in CI
-          LIBGL_DRI3_DISABLE: "1" # disable DRI3 to avoid warnings in CI logs
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output --verbose
+            xvfb-run -a bun run e2e --gov-agent --client
           else
             echo "OPENAI_API_KEY not set; running baseline e2e"
-            bun run e2e
+            bun run e2e --client
           fi
 
       - name: Upload diagnostics on failure

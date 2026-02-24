@@ -89,13 +89,13 @@ The e2e flow:
 - fetches the bundle from IPFS
 
 Optional paths:
-- `bun run e2e -- --sepolia` (requires `SEPOLIA_RPC_URL` in `contracts/.env`)
-- `OPENAI_API_KEY=... bun run e2e -- --gov-agent` (runs governance agent vote path via Rust binary)
-- `bun run e2e -- --client` (client automation checks)
+- `bun run e2e --sepolia` (requires `SEPOLIA_RPC_URL` in `contracts/.env`)
+- `OPENAI_API_KEY=... bun run e2e --gov-agent` (runs governance agent vote path via Rust binary)
+- `bun run e2e --client` (client automation checks)
 
 CI note:
 - `.github/workflows/e2e.yml` runs this suite on `master` push/PR.
-- If `OPENAI_API_KEY` is available in CI, workflow runs `--gov-agent`; otherwise it runs baseline `bun run e2e`.
+- If `OPENAI_API_KEY` is available in CI, workflow runs `--gov-agent`; otherwise it runs baseline `bun run e2e --client`.
 
 ## Client
 
