@@ -70,7 +70,7 @@ jobs:
           NO_AT_BRIDGE: "1" # disable AT Bridge to avoid warnings in CI logs
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
-            xvfb-run -a bun run e2e -- --gov-agent --client
+            xvfb-run -a bun run e2e -- --gov-agent --client --tool-output --verbose
           else
             echo "OPENAI_API_KEY not set; running baseline e2e"
             bun run e2e
