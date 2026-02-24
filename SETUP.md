@@ -75,7 +75,9 @@ E2E tests live in the `e2e/` submodule. They require a local devnet + IPFS.
 
 ```bash
 cd e2e
-ANVIL_PORT=8546 IPFS_API=http://127.0.0.1:5001 IPFS_GATEWAY=http://127.0.0.1:8080 bun run e2e
+cp .env.example .env
+# set MONOREPO_DIR in .env to your absolute monorepo path
+bun run e2e
 ```
 
 The e2e flow:
@@ -85,6 +87,15 @@ The e2e flow:
 - submits governance proposal
 - votes/queues/executes
 - fetches the bundle from IPFS
+
+Optional paths:
+- `bun run e2e --sepolia` (requires `SEPOLIA_RPC_URL` in `contracts/.env`)
+- `OPENAI_API_KEY=... bun run e2e --gov-agent` (runs governance agent vote path via Rust binary)
+- `bun run e2e --client` (client automation checks)
+
+CI note:
+- `.github/workflows/e2e.yml` runs this suite on `master` push/PR.
+- If `OPENAI_API_KEY` is available in CI, workflow runs `--gov-agent`; otherwise it runs baseline `bun run e2e --client`.
 
 ## Client
 
