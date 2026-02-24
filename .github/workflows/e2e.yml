@@ -68,6 +68,7 @@ jobs:
         working-directory: e2e
         env:
           NO_AT_BRIDGE: "1" # disable AT Bridge to avoid warnings in CI logs
+          LIBGL_DRI3_DISABLE: "1" # disable DRI3 to avoid warnings in CI logs
         run: |
           if [ -n "${OPENAI_API_KEY}" ]; then
             xvfb-run -a bun run e2e -- --gov-agent --client --tool-output --verbose
