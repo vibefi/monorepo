@@ -26,3 +26,6 @@
 [submodule "gov-agent"]
 	path = gov-agent
 	url = git@github.com:vibefi/governance-agent.git
+[submodule "ipfs-relay"]
+	path = ipfs-relay
+	url = git@github.com:vibefi/ipfs-relay.git
