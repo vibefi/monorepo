@@ -13,6 +13,7 @@ Decentralized governance and hosting for DeFi frontends. The protocol lets anyon
 | `docs/` | Docusaurus documentation site |
 | `e2e/` | End-to-end tests covering the full governance + IPFS flow |
 | `gov-agent/` | Rust governance voting agent for VibeFi DAO |
+| `ipfs-relay/` | IPFS relay service used by local stack and integration tests |
 | `lander/` | Landing page site |
 | `studio/` | Browser studio app for composing, previewing, and publishing dapp content |
 
